@@ -1,0 +1,7 @@
+#Simple steps to run the application and validate
+
+npm install -g typescript
+
+tsc
+
+http-server

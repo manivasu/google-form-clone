@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Form Builder</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Form Builder</h1>
+        <div>
+            <label for="fieldType">Field Type:</label>
+            <select id="fieldType">
+                <option value="text">Text Input</option>
+                <option value="multiple-choice">Multiple Choice</option>
+                <option value="checkbox">Checkbox</option>
+            </select>
+            <label for="fieldLabel">Field Label:</label>
+            <input type="text" id="fieldLabel" placeholder="Field Label" />
+            <label for="fieldOptions">Options (comma separated):</label>
+            <input type="text" id="fieldOptions" placeholder="Options (comma separated)" />
+            <label>
+                <input type="checkbox" id="fieldRequired" /> Required
+            </label>
+            <button id="addField">Add Field</button>
+        </div>
+        <div id="formPreview"></div>
+        <div id="formList"></div>
+        <button id="submitForm">Submit Form</button>
+        <button id="exportData">Export Data</button>
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
