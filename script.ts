@@ -82,8 +82,17 @@ class FormBuilder {
         formList.innerHTML = '<h2>Form Fields</h2>';
         this.fields.forEach((field, index) => {
             const fieldDiv = document.createElement('div');
-            fieldDiv.innerHTML = `${field.label} <button onclick="formBuilder.deleteField(${index})">Delete</button>`;
+            fieldDiv.innerHTML = `${field.label} <button class="delete-field" data-index="${index}">Delete</button>`;
             formList.appendChild(fieldDiv);
+        });
+    
+        // Add event listener for delete buttons
+        const deleteButtons = document.querySelectorAll('.delete-field');
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const index = (event.currentTarget as HTMLButtonElement).dataset.index;
+                this.deleteField(parseInt(index!));
+            });
         });
     }
 
@@ -179,3 +188,4 @@ class FormBuilder {
 }
 
 const formBuilder = new FormBuilder();
+(window as any).formBuilder = formBuilder; 
